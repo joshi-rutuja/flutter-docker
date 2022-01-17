@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/animated-alloy-337110/flutter-docker', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', '-t', 'gcr.io/animated-alloy-337110/flutter-docker']
+- name: 'gcr.io/cloud-builders/gcloud'
+   args: ['beta', 'run', 'deploy', 'flutter-docker', '--image', 'gcr.io/animated-alloy-337110/flutter-docker:latest', '--region', 'europe-west1', '--platform', 'managed', '--allow-unauthenticated']
+images:
+ - 'gcr.io/animated-alloy-337110/flutter-docker'
