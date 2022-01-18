@@ -21,4 +21,7 @@ RUN flutter build web
 EXPOSE 8080
 RUN apt-get install dos2unix
 RUN dos2unix /usr/local/bin/app/server/server.sh
+
+# Set the server startup script as executable
+RUN  ["chmod", "+x", "/usr/local/bin/app/server/server.sh"]
 ENTRYPOINT [ "/usr/local/bin/app/server/server.sh" ]
