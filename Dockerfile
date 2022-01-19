@@ -11,7 +11,7 @@ RUN flutter upgrade
 RUN flutter config --enable-web
 RUN flutter doctor -v
 
-# Copy files to container and get dependencies
+# Copy files to container and get all the dependencies
 COPY . /usr/local/bin/app
 WORKDIR /usr/local/bin/app
 RUN flutter pub get
