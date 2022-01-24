@@ -1,4 +1,4 @@
-# CICD on GCP for a flutter app
+# CICD on GCP for a Flutter app
 
 This is a step by step guide to Continuously Integrate and Continuously Deploy your application on Cloud Run
 
